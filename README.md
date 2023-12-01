@@ -43,4 +43,48 @@ int main(void) {
 	}//for
 
 }
-## 2023-11-29 진행예정
+```
+## 2023-12-01 진행
+## 문자열 4번
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    char str;
+    std::cin >> str;
+    int number = static_cast<int>(str);
+    std::cout << number;
+ 
+    return 0;
+}
+```
+## 문자열 5번
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+/*
+첫째줄에는 입력한 숫자 count
+둘째줄에는 숫자의 합
+*/
+int main() {
+
+    int num1;
+    std::cin >> num1;
+    char num2;
+
+    int sum = 0;
+
+    for (int i = 0; i < num1; i++)
+    {
+        std::cin >> num2;
+        sum += num2 - '0';
+    }
+
+    std::cout << sum << "\n";
+
+    return 0;
+}
