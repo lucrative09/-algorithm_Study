@@ -88,3 +88,80 @@ int main() {
 
     return 0;
 }
+```
+## 2023-12-04 진행
+## 문자열 6번
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string s;
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+    cin >> s;
+    for(int i = 0; i < alphabet.length(); i++)
+        cout << (int)s.find(alphabet[i]) << " ";
+    return 0;
+}
+```
+## 2023-12-05 진행
+## 문자열 7번
+```c++
+#include <iostream>
+#include <string>
+
+int main(){
+	int i, j, selectNum, workNum;
+	std :: string str, result;
+	// 반복 문자열 개수 ex) 2번 사용
+	std :: cin >> selectNum;
+	while(selectNum>0){
+		// 문자 반복 횟수 지정
+		std :: cin >> workNum;
+		std :: cin >> str;
+		// 문자 반복 횟수 지정을 한다.
+		for(i=0; i<str.length(); i++){
+			for(j=0; j<workNum; j++){
+				std :: cout <<str[i];
+			}//for
+		}//2for
+		std :: cout << "\n";
+		selectNum--;
+	}//while
+	return 0;
+}
+```
+## 2023-12-06 진행
+## 문자열 8번
+```c++
+#include <iostream>
+#include <string>
+
+int main() {
+
+    int cnt = 0;
+
+    std::string str;
+    getline(std::cin, str);
+    cnt = 1;
+   
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ') {
+            cnt++;
+        }
+    }
+
+    if (str[0] == ' ') {
+        cnt--;
+    }
+    
+    if (str[str.length() - 1] == ' ') {
+        cnt--;
+    }
+
+ 
+    std::cout << cnt << "\n";
+
+    return 0;
+}
+```
