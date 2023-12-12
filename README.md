@@ -165,3 +165,130 @@ int main() {
     return 0;
 }
 ```
+## 2023-12-07 진행
+## 문자열 9번
+```c++
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+int reverse(int n) {
+    std::string s = std::to_string(n);
+    reverse(s.begin(), s.end());
+    return atoi(s.c_str());
+}
+
+int max(int a, int b) {
+    int final;
+    if (a > b) {
+        final = a;
+    }
+    else if (a < b)
+    {
+        final = b;
+    }
+    return final;
+}
+
+int main() {
+
+    int num1, num2, result;
+    std::cin >> num1;
+    std::cin >> num2;
+    
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+    
+    result = max(num1, num2);
+
+    std::cout << result;
+
+    return 0;
+}
+```
+## 2023-12-08 진행
+## 문자열 10번 - 실패.. 한번 더 도전예정
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+
+	/* 다이얼 번호 돌리기
+	   숫자 1 클릭 시 2초가 소요된다.
+	   숫자 1에서 한칸 옆으로 가면 1초가 더 소요된다.
+	   숫자별로 영단어가 적혀있다.
+	   ex) UNUCIC -> 868242 -> 시간 초를 구하는 형태의 프로그램 구현
+
+	  입력 : 첫째 줄 알파벳 대문자로 이루어진 단어가 주어진다. 단어의 길이는 2보다 크거나같고 15보다 작거나 같다.
+	*/
+	string phone; 
+	int result = 0, time, i;
+	cin >> phone;
+	int alphabatCnt[26] = {};
+	
+	for (char c: phone) {
+		alphabatCnt[c - 'A']++;
+	}
+	for (i = 0; i <= 'Z' - 'A'; i++) {
+		if (i == 'S' - 'A' || i == 'V' - 'A') {
+			result += (i / 3 + 2) * alphabatCnt[i];
+			continue;
+		}
+		if (alphabatCnt[i]) {
+			time = i / 3 + 3;
+			result += (time > 9) ? 10 * alphabatCnt[i] : time * alphabatCnt[i];
+		}
+	}
+	cout << result;
+	return 0;
+}
+```
+## 2023-12-11 진행
+## 문자열 11번
+```c++
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+	/*
+		그대로 출력하기
+		입력 받은 대로 출력하는 프로그램을 작성하시오
+		알파벳 소문자, 대문자, 공백, 숫자로만 이루어있다. 각줄은 100 페이지글자만 안넘으며, 빈 줄은 주이지않는다.
+		또 각 줄은 공백으로 시작하지 않고 공백으로 끝나지 않는다.
+	*/
+	int test = 1;
+	std::string inputStr;
+	while (true) {
+		
+		std::getline(std::cin, inputStr);
+			if (inputStr == "")
+				break;
+		std::cout << inputStr << "\n";
+		
+		test++;
+	}
+	return 0;
+}
+```
+## 2023-12-12 진행
+## 심화1-1
+```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char const* argv[]) {
+
+	string s = "         ,r'\"7\n";   // \", \n 이 제어문자다.
+	s += "r`-_   ,'  ,/\n";    // \n 이 제어문자다.
+	s += " \\. \". L_r'\n";    // \\, \", \n 이 제어문자다.
+	s += "   `~\\/\n";         // \\, \n 이 제어문자다.
+	s += "      |\n";           // \n 이 제어문자다.
+	s += "      |";
+	cout << s;
+	return 0;
+}
+```
